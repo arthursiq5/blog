@@ -2,6 +2,13 @@ import { promises as fs } from "fs";
 import matter from "gray-matter";
 import path from "path";
 
+export interface PostInterface {
+    slug: string,
+    title: string,
+    date: Date,
+    markdown: string,
+}
+
 const getPosts = async () => {
     const postsDirectory = path.join(process.cwd(), 'posts')
     const filenames = await fs.readdir(postsDirectory)
