@@ -1,10 +1,11 @@
+import ReactMarkdown from "react-markdown";
 import getPosts, { PostInterface } from "../lib/posts";
 
 const Post = ({title, date, markdown}: PostInterface) => (
     <article>
         <h1>{ title }</h1>
         <time className="font-extralight tracking-winder">{ date }</time>
-        { markdown }
+        <ReactMarkdown>{ markdown }</ReactMarkdown>
     </article>
 )
 
